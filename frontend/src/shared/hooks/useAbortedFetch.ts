@@ -12,6 +12,7 @@ export default function useAbortedFetch(url: string, config?: Object){
             .then(response => response.json())
             .then(response => {
                 setResponse(response)
+                setIsRunning(false)
             })
             .catch(e => {
                 if(e.name === "AbortError"){
